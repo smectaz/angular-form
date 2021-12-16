@@ -7,9 +7,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SearchMoviesComponent } from './search-movies/search-movies.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
-  declarations: [AppComponent, SignUpComponent, SearchMoviesComponent],
+  declarations: [AppComponent, SignUpComponent, SearchMoviesComponent, DeveloperComponent, SkillComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
