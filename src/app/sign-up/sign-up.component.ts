@@ -8,10 +8,10 @@ import { User } from '../User';
 })
 export class SignUpComponent implements OnInit {
   User: User = new User();
-
+  submitForm: string = '';
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log('form submitted');
+    this.submitForm = 'form submitted';
   }
 }

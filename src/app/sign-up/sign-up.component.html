@@ -1,5 +1,5 @@
 <form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
-  <div>
+  <div *ngIf="submitForm == 'form submitted'">
     Form submitted ? {{ myForm.submitted }} Form valid ? {{ myForm.valid }} Form
     invalid ? {{ myForm.invalid }}
   </div>
