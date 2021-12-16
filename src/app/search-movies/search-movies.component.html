@@ -1,1 +1,95 @@
-<p>search-movies works!</p>
+<div class="container-fluid d-flex justify-content-center">
+  <div class="">
+    <h2 class="display-2">Challenge 8 - Reactive Form</h2>
+    <h3 class="display-3 text-center">Recherche de film</h3>
+  </div>
+</div>
+<div class="container-fluid">
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    class="border border-info"
+  >
+    <div class="form-row">
+      <div class="form-group col-5">
+        <label>Numéro d'identification</label>
+        <input
+          type="text"
+          formControlName="id"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && film['id'].errors }"
+        />
+        <div *ngIf="submitted && film['id'].errors" class="invalid-feedback">
+          <div *ngIf="film['id'].errors['required']">
+            L'identifiant est requis
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-5">
+        <label>Titre du film</label>
+        <input
+          type="text"
+          formControlName="titre"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && film['titre'].errors }"
+        />
+        <div *ngIf="submitted && film['titre'].errors" class="invalid-feedback">
+          <div *ngIf="film['titre'].errors['required']">
+            Le titre est requis
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col">
+      <label>Type du film</label>
+      <select
+        formControlName="type"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && film['type'].errors }"
+      >
+        <option value="film">film</option>
+        <option value="serie">série</option>
+        <option value="episode">épisode</option>
+      </select>
+      <div *ngIf="submitted && film['type'].errors" class="invalid-feedback">
+        <div *ngIf="film['type'].errors['required']">Title is required</div>
+      </div>
+    </div>
+    <div class="form-group col-5">
+      <label>Année de sortie</label>
+      <input
+        type="text"
+        formControlName="date"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && film['date'].errors }"
+      />
+      <div *ngIf="submitted && film['date'].errors" class="invalid-feedback">
+        <div *ngIf="film['date'].errors['required']">Titre est requis</div>
+        <div *ngIf="film['date'].errors['min']">Date mimimale 1900</div>
+      </div>
+    </div>
+    <div class="form-group col">
+      <label>Fiche</label>
+      <select
+        formControlName="fiche"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && film['fiche'].errors }"
+      >
+        <option value="complete">complete</option>
+        <option value="courte">courte</option>
+      </select>
+      <div *ngIf="submitted && film['fiche'].errors" class="invalid-feedback">
+        <div *ngIf="film['fiche'].errors['required']">Title is required</div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-secondary mb-2">enregistrer</button>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-danger" type="reset" (click)="onEfface()">
+        annuler
+      </button>
+    </div>
+  </form>
+</div>
