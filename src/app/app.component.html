@@ -1,2 +1,16 @@
-<app-developer></app-developer>
+<app-create-onomatopia (sendOnomatopiaToParent)="addOnomatopia($event)">
+</app-create-onomatopia>
+
+Liste des Onomaptopées :
+<app-onomatopia-item
+  (removeClick)="removeOnomatopia(i)"
+  [name]="onomatopia"
+  *ngFor="let onomatopia of onomatopeias; let i = index"
+></app-onomatopia-item>
+<ul>
+  <li () *ngFor="let newOnomatopoia of onomatopeias" class="list-group">
+    - {{ newOnomatopoia }}
+  </li>
+</ul>
+
 <router-outlet></router-outlet>

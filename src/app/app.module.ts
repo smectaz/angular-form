@@ -9,9 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
+import { CreateOnomatopiaComponent } from './create-onomatopia/create-onomatopia.component';
+import { OnomatopiaItemComponent } from './onomatopia-item/onomatopia-item.component';
 
 @NgModule({
-  declarations: [AppComponent, SignUpComponent, SearchMoviesComponent, DeveloperComponent, SkillComponent],
+  declarations: [AppComponent, SignUpComponent, SearchMoviesComponent, DeveloperComponent, SkillComponent, CreateOnomatopiaComponent, OnomatopiaItemComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
